@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 const axios = require('axios');
+const cmsUrl = 'http://localhost:2369/ghost/api/v2/content/posts?key=c55ee6957c081a5a9b99e57c65';
 
 class App extends React.Component {
 
@@ -13,7 +14,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:2369/ghost/api/v2/content/posts?key=c55ee6957c081a5a9b99e57c65')
+    axios.get(cmsUrl)
       .then(response => {
         console.log(response);
         let posts = response.data.posts;
@@ -24,7 +25,7 @@ class App extends React.Component {
   }
   render() {
     let posts_data = this.state.posts.map(post => {
-      return <div dangerouslySetInnerHTML={__html: post.html} />
+      return <div dangerouslySetInnerHTML={{__html: post.html}} />
     })
 
     return (  
