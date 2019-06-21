@@ -10,7 +10,7 @@ class Nav extends React.Component {
             <div className="row">
                 <div className="top-right-links">
                     <ul>
-                        <li><i className="fas fa-phone-alt" style={{"color": "#e4701e"}}></i>  Toll Free: 1800 103 6001</li>
+                        <li><i className="fa-phone-alt" style={{color: "#e4701e"}}></i>  Toll Free: 1800 103 6001</li>
                         <li className="quicklinkDD"><a href="JavaScript:void(0)">Quick Links <i className="fa fa-sort-down"></i></a>
                             <div className="dropDown">
                                 <ul>
