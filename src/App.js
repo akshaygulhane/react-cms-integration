@@ -1,41 +1,34 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import LifeInsurance from './components/LifeInsurance';
+import Home from './components/Home';
+import Nav from './components/Nav';
+import GeneralInsurance from './components/GeneralInsurance';
+import Loan from './components/Loan';
+import PersonalLoan from './components/PersonalLoan';
+import BusinessLoan from './components/BusinessLoan';
+import Footer from './components/Footer';
 
-const axios = require('axios');
-const cmsUrl = 'http://localhost:2369/ghost/api/v2/content/posts?key=c55ee6957c081a5a9b99e57c65';
+function App() {
 
-class App extends React.Component {
-
-  constructor() {
-    super();
-    this.state = {
-      posts: []
-    }
-  }
-
-  componentDidMount() {
-    axios.get(cmsUrl)
-      .then(response => {
-        console.log(response);
-        let posts = response.data.posts;
-        this.setState({
-          posts
-        })
-      })
-  }
-  render() {
-    let posts_data = this.state.posts.map(post => {
-      return <div dangerouslySetInnerHTML={{__html: post.html}} />
-    })
-
-    return (  
+  return (
+    <Router>
       <div className="App">
-        <header className="App-header">
-          <html>{posts_data}</html>
-        </header>
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={Home}/>
+          <Route path="/insurance/life-insurance.aspx" component={LifeInsurance}/>
+          <Route path="/insurance/general-insurance.aspx" component={GeneralInsurance}/>
+          <Route path="/home-loan/index.aspx" component={Loan}/>
+          <Route path="/personal-loan/personal-loan-for-wedding.aspx" component={PersonalLoan}/>
+          <Route path="/business-loan/self-employed-business-loan/index.aspx" component={BusinessLoan}/>
+        </Switch>
+        <Footer />
       </div>
-    );
-  }
+    </Router>
+
+  );
 }
 
 export default App;
