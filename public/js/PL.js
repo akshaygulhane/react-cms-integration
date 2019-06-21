@@ -2,6 +2,112 @@
 
 $(document).ready(function(){
 
+    $('.verticalSlider').each(function (index, element) {
+        //alert($(this).length);
+        var status = $(this).prevAll('.PagingInfo');
+        $(this).on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+            var i = (currentSlide ? currentSlide : 0) + 1;
+            // alert(i)			 
+            status.html('<span>' + i + '</span>' + '/' + slick.slideCount);
+        });
+
+        $(this).slick({
+            infinite: false,
+            centerMode: true,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            adaptiveHeight: true,
+            responsive: [
+                {
+                    breakpoint: 1000,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 580,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+
+
+
+    });
+
+
+
+
+    $('.BannerSlider').slick({
+        dots: true,
+        infinite: true,
+        arrows: false,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        autoplay: true,
+        autoplaySpeed: 3000
+    });
+    $('.ourVisonSlider').slick({
+        dots: true,
+        infinite: true,
+        arrows: false,
+        speed: 300,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        adaptiveHeight: true
+    });
+
+    $(".LoanTypeSlider").slick({
+        arrows: true,
+        dots: false,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 580,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+
+    $(".CustomerSlider").slick({
+        arrows: true,
+        dots: false,
+        infinite: false,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        adaptiveHeight: true,
+        responsive: [
+            {
+                breakpoint: 1000,
+                settings: {
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 580,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+
     $(".uclheader_btnSearch").click(function () {
         $(this).toggleClass("sel");
         $(".allfooterLink").slideToggle();
