@@ -1,7 +1,9 @@
 import React from 'react';
 
 const axios = require('axios');
-const cmsUrl = 'http://192.168.0.37:8080/insurance/life-insurance.aspx';
+
+const cmsUrl = process.env.REACT_APP_CMS_URL || 'http://192.168.0.37:8080';
+const path =  `${cmsUrl}/fullerton/insurance/general-insurance?_format=json`;
 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.common['Content-Type'] = 'application/json';
@@ -16,7 +18,7 @@ class LifeInsurance extends React.Component {
     }
 
     componentWillMount() {
-        axios.get(cmsUrl, {
+        axios.get(path, {
             headers: {
                 'Access-Control-Allow-Origin' : '*'
             }
