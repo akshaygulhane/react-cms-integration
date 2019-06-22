@@ -1,35 +1,42 @@
 import React from 'react';
 
-// const axios = require('axios');
-// const cmsUrl = 'http://localhost:2369/ghost/api/v2/content/posts?key=c55ee6957c081a5a9b99e57c65';
+const axios = require('axios');
+const cmsUrl = 'http://192.168.0.37:8080/fullerton/?_format=json';
+
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 
 class BusinessLoan extends React.Component {
 
+    constructor() {
+        super();
+        this.state = {
+            template: ''
+        }
+    }
 
-    // componentDidMount() {
-    //     axios.get(cmsUrl)
-    //         .then(response => {
-    //             console.log(response);
-    //             let posts = response.data.posts;
-    //             this.setState({
-    //                 posts
-    //             })
-    //         })
-    // }
+    componentWillMount() {
+        axios.get(cmsUrl, {
+            headers: {
+                'Access-Control-Allow-Origin' : '*'
+            }
+            })
+            .then(response => {
+                console.log(response.data);
+                
+                let htmlBody = response.data.body[0].value;
+                this.setState({
+                    template: htmlBody
+                })
+            })
+            .catch(err => {
+              console.log('ERROR::', err);
+            })
+    }
 
     render() {
-        // let posts_data = this.state.posts.map(post => {
-        //     return <div dangerouslySetInnerHTML={{__html: post.html}} />
-        //   })
-          
-        return (
-            <div>
-                <h1>
-                    BusinessLoan
-                </h1>
-            </div>
-        )
+        return <div dangerouslySetInnerHTML={{__html: this.state.template}} />
     }
 }
 

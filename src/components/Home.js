@@ -14,7 +14,7 @@ class Home extends React.Component {
         }
     }
 
-    componentDidMount() {
+    componentWillMount() {
         axios.get(cmsUrl, {
             headers: {
                 'Access-Control-Allow-Origin' : '*'
@@ -34,8 +34,6 @@ class Home extends React.Component {
     }
 
     render() {
-        // const template = <h1>Hello to Home!</h1>
-
         return <div dangerouslySetInnerHTML={{__html: this.state.template}} />
     }
 }
