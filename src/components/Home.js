@@ -9,9 +9,9 @@ axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 const loading_styles = {
-    'position' : 'absolute',
-    'left' : '50%',
-    'top' : '50%'
+    'position': 'absolute',
+    'left': '50%',
+    'top': '50%'
 }
 
 class Home extends React.Component {
@@ -22,6 +22,13 @@ class Home extends React.Component {
             template: ''
         }
     }
+    
+    loadScript = function(src) {
+        var tag = document.createElement('script');
+        tag.async = false;
+        tag.src = src;
+        document.getElementsByTagName('body').appendChild(tag);
+      }
 
     componentWillMount() {
         this.setState({ loading: true }, () => {
@@ -42,10 +49,10 @@ class Home extends React.Component {
         return (
             <div className='template'>
                 {/* <LoadingSpinner /> */}
-            { this.state.loading? <LoadingSpinner /> : <div  dangerouslySetInnerHTML={{ __html: this.state.template }} /> }
+                {this.state.loading ? <LoadingSpinner /> : <div dangerouslySetInnerHTML={{ __html: this.state.template }} />}
             </div>
         )
-}
+    }
 }
 
 const LoadingSpinner = () => (
