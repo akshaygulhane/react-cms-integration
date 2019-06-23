@@ -2,8 +2,8 @@ import React from 'react';
 // require('dotenv').config()
 
 const axios = require('axios');
-const cmsUrl = process.env.REACT_APP_CMS_URL || 'http://192.168.0.37:8080';
-const path = `${cmsUrl}/fullerton/personal-loan/personal-loan-for-wedding/?_format=json`
+const cmsUrl = process.env.REACT_APP_CMS_URL || 'http://13.233.221.79';
+const path = `${cmsUrl}/personal-loan/personal-loan-for-wedding/?_format=json`
 
 console.log('process.env.REACT_APP_CMS_URL : ', process.env.REACT_APP_CMS_URL);
 

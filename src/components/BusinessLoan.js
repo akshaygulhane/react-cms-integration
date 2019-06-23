@@ -3,8 +3,8 @@ import React from 'react';
 const axios = require('axios');
 // const cmsUrl = 'http://192.168.0.37:8080';
 
-const cmsUrl = process.env.REACT_APP_CMS_URL || 'http://192.168.0.37:8080';
-const path =  `${cmsUrl}/fullerton/business-loan/self-employed-business-loan/?_format=json`;
+const cmsUrl = process.env.REACT_APP_CMS_URL || 'http://13.233.221.79';
+const path =  `${cmsUrl}/business-loan/self-employed-business-loan/?_format=json`;
 
 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
