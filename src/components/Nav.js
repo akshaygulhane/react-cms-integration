@@ -87,7 +87,7 @@ class Nav extends React.Component {
                                                         </div>
 
                                                         <div className="col-xs-6 col-sm-4 leadTextWrap">
-                                                            <Link to="/personal-loan/personal-loan-for-wedding.aspx" className="linkTab Wedding">
+                                                            <Link to="/personal-loan/personal-loan-for-wedding" className="linkTab Wedding">
                                                                 <p className="leadText">Personal Loan for <span>Wedding </span></p>
                                                             </Link>
                                                         </div>
@@ -129,7 +129,7 @@ class Nav extends React.Component {
                                         </div>
                                         <div className="col-xs-12">
                                             <div className="applyNowCard">
-                                                <p><Link to="/business-loan/self-employed-business-loan/index.aspx">Overview</Link></p>
+                                                <p><Link to="/business-loan/self-employed-business-loan/index">Overview</Link></p>
                                                 <p><a href="https://www.fullertonindia.com/business-loan/self-employed-business-loan/interest-rate.aspx">Interest rates</a></p>
                                                 <p><a href="https://www.fullertonindia.com/business-loan/self-employed-business-loan/documentation.aspx">Documentation</a></p>
                                                 <br />
@@ -226,8 +226,8 @@ class Nav extends React.Component {
                                         </div>
                                         <div className="col-xs-12">
                                             <div className="applyNowCard">
-                                                <p><Link to="/insurance/life-insurance.aspx">Life Insurance</Link></p>
-                                                <p><Link to="/insurance/general-insurance.aspx">General  Insurance </Link></p>
+                                                <p><Link to="/insurance/life-insurance">Life Insurance</Link></p>
+                                                <p><Link to="/insurance/general-insurance">General  Insurance </Link></p>
                                                 <p><a href="https://www.fullertonindia.com/insurance/group-insurance.aspx">Group  Insurance </a></p>
                                                 <p><a href="https://www.fullertonindia.com/insurance/health-insurance.aspx">Health  Insurance</a></p>
                                             </div>
