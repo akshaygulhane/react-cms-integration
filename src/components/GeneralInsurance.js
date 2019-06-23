@@ -37,7 +37,7 @@ class GeneralInsurance extends React.Component {
     }
 
     render() {
-        return <div dangerouslySetInnerHTML={{ __html: this.state.template }} />
+        return <div className='container-fluid' dangerouslySetInnerHTML={{ __html: this.state.template }} />
     }
 }
 

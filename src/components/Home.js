@@ -47,7 +47,7 @@ class Home extends React.Component {
     render() {
         // const { template, loading } = this.state;
         return (
-            <div className='template'>
+            <div className='container-fluid'>
                 {/* <LoadingSpinner /> */}
                 {this.state.loading ? <LoadingSpinner /> : <div dangerouslySetInnerHTML={{ __html: this.state.template }} />}
             </div>

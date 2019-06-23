@@ -18,11 +18,11 @@ function App() {
         <Nav />
         <Switch>
           <Route exact path="/" component={Home}/>
-          <Route path="/insurance/life-insurance.aspx" component={LifeInsurance}/>
-          <Route path="/insurance/general-insurance.aspx" component={GeneralInsurance}/>
-          <Route path="/home-loan/index.aspx" component={Loan}/>
-          <Route path="/personal-loan/personal-loan-for-wedding.aspx" component={PersonalLoan}/>
-          <Route path="/business-loan/self-employed-business-loan/index.aspx" component={BusinessLoan}/>
+          <Route path="/insurance/life-insurance" component={LifeInsurance}/>
+          <Route path="/insurance/general-insurance" component={GeneralInsurance}/>
+          <Route path="/home-loan/index" component={Loan}/>
+          <Route path="/personal-loan/personal-loan-for-wedding" component={PersonalLoan}/>
+          <Route path="/business-loan/self-employed-business-loan" component={BusinessLoan}/>
         </Switch>
         <Footer />
       </div>
