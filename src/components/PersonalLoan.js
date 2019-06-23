@@ -5,7 +5,7 @@ const axios = require('axios');
 const cmsUrl = process.env.REACT_APP_CMS_URL || 'http://13.233.221.79';
 const path = `${cmsUrl}/personal-loan/personal-loan-for-wedding/?_format=json`
 
-console.log('process.env.REACT_APP_CMS_URL : ', process.env.REACT_APP_CMS_URL);
+// console.log('process.env.REACT_APP_CMS_URL : ', process.env.REACT_APP_CMS_URL);
 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 axios.defaults.headers.common['Content-Type'] = 'application/json';
