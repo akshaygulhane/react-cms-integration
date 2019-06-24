@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import {Link} from 'react-router-dom';
 
@@ -129,7 +130,7 @@ class Nav extends React.Component {
                                         </div>
                                         <div className="col-xs-12">
                                             <div className="applyNowCard">
-                                                <p><Link to="/business-loan/self-employed-business-loan/index">Overview</Link></p>
+                                                <p><Link to="/business-loan/self-employed-business-loan">Overview</Link></p>
                                                 <p><a href="https://www.fullertonindia.com/business-loan/self-employed-business-loan/interest-rate.aspx">Interest rates</a></p>
                                                 <p><a href="https://www.fullertonindia.com/business-loan/self-employed-business-loan/documentation.aspx">Documentation</a></p>
                                                 <br />

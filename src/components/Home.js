@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 const axios = require('axios');
 
@@ -22,26 +23,43 @@ class Home extends React.Component {
             template: ''
         }
     }
-    
-    loadScript = function(src) {
+
+    loadScript = function (src) {
         var tag = document.createElement('script');
         tag.async = false;
         tag.src = src;
         document.getElementsByTagName('body').appendChild(tag);
-      }
+    }
 
     componentWillMount() {
+        $.getScript('/js/jquery.min.js', function () {
+            $.getScript('/js/slick.min.js', function () {
+                $.getScript('/js/custom-script.js');
+            });
+            $.getScript('/js/common.js');
+            $.getScript('/js/matchHeight.js');
+        });
+       
+       
         this.setState({ loading: true }, () => {
             axios.get(path, {
                 headers: {
                     'Access-Control-Allow-Origin': '*'
                 }
-            })
+                })
                 .then(response => this.setState({
                     loading: false,
                     template: response.data.body[0].value,
+                }, function () {
+                    console.log('cwm');
+                   
                 }));
         });
+    }
+
+
+    componentDidMount() {
+        console.log('cdm');
     }
 
     render() {
